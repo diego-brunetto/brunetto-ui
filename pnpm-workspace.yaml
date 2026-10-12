@@ -1,0 +1,4 @@
+# Solo instala versiones publicadas hace al menos 14 días.
+minimumReleaseAge: 20160
+onlyBuiltDependencies:
+  - esbuild
