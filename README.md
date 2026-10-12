@@ -6,14 +6,23 @@ Design system (guía de uso, tokens y previews): https://claude.ai/artifact/CHRC
 
 ## Instalar
 
-Mientras no esté publicado en un registro, instalalo desde el repo o desde la carpeta local:
+El paquete se publica en GitHub Packages. GitHub pide un token para instalar, aunque el paquete sea público.
+
+1. Creá un token clásico con el permiso `read:packages` en https://github.com/settings/tokens.
+2. En la app que lo usa, agregá un `.npmrc` (no lo subas con el token adentro; usá una variable de entorno):
+
+```ini
+@diego-brunetto:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=${GITHUB_PACKAGES_TOKEN}
+```
+
+3. Instalá:
 
 ```bash
-# desde GitHub (corre el build en el prepare)
-pnpm add github:diego-brunetto/brunetto-ui
-# o desde una carpeta vecina
-pnpm add ../brunetto-ui
+pnpm add @diego-brunetto/ui   # o npm install @diego-brunetto/ui
 ```
+
+En Vercel o en CI, cargá `GITHUB_PACKAGES_TOKEN` como variable de entorno.
 
 Pide `react` y `react-dom` 18.3 o 19.
 
@@ -107,6 +116,13 @@ pnpm build       # dist/: index.js, index.d.ts y los tres CSS
 ```
 
 `pnpm-workspace.yaml` solo deja instalar versiones publicadas hace 14 días o más.
+
+## Publicar una versión
+
+```bash
+pnpm version patch        # o minor / major: actualiza package.json y crea el tag vX.Y.Z
+git push --follow-tags    # el workflow Publish verifica, compila y publica en GitHub Packages
+```
 
 ## Estructura
 

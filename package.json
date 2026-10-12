@@ -59,5 +59,8 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/diego-brunetto/brunetto-ui.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   }
 }
