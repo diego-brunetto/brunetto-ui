@@ -37,6 +37,7 @@ import {
 import { IconsSection } from "./sections/Icons";
 import { TableSection } from "./sections/Table";
 import { DialogSection } from "./sections/Dialog";
+import { SideNavSection } from "./sections/SideNav";
 
 type Mode = "auto" | "light" | "dark";
 
@@ -249,6 +250,7 @@ export function App() {
 
         <IconsSection />
         <TableSection />
+        <SideNavSection />
 
         <Card soft style={{ gridColumn: "1 / -1" }}>
           <CardHeader title="Disponible" aside={<Badge tone="warning">3 pendientes</Badge>} />
