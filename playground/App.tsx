@@ -32,6 +32,7 @@ import {
   formatARS,
   toast,
 } from "../src";
+import { IconsSection } from "./sections/Icons";
 
 type Mode = "auto" | "light" | "dark";
 
@@ -237,6 +238,7 @@ export function App() {
           </div>
         </Spec>
 
+        <IconsSection />
         <Card soft style={{ gridColumn: "1 / -1" }}>
           <CardHeader title="Disponible" aside={<Badge tone="warning">3 pendientes</Badge>} />
           <Stat label="Octubre 2026" value={formatARS(1284350)} large footer={<span className="muted" style={{ fontSize: "var(--text-xs)" }}>≈ <span className="num">US$ 912</span> · dólar MEP $ 1.408</span>} />
