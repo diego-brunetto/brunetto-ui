@@ -34,6 +34,7 @@ import {
 } from "../src";
 import { IconsSection } from "./sections/Icons";
 import { TableSection } from "./sections/Table";
+import { DialogSection } from "./sections/Dialog";
 
 type Mode = "auto" | "light" | "dark";
 
@@ -222,6 +223,8 @@ export function App() {
             <Button variant="ghost" onClick={() => toast("Cambios guardados")}>Mostrar aviso</Button>
           </div>
         </Spec>
+
+        <DialogSection />
 
         <Spec title="Navegación inferior" api="<BottomNav>" wide>
           <div style={{ position: "relative", height: "6rem", border: "1px solid var(--border)", background: "var(--background)" }}>

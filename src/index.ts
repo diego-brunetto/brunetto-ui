@@ -4,7 +4,7 @@ export { BottomNav, type BottomNavItem, type BottomNavProps } from "./components
 export { Button, type ButtonProps, type ButtonSize, type ButtonVariant } from "./components/Button";
 export { Card, CardHeader, Divider, type CardHeaderProps, type CardProps } from "./components/Card";
 export { Checkbox, type CheckboxProps } from "./components/Checkbox";
-export { ConfirmDialog, type ConfirmDialogProps } from "./components/Dialog";
+export { ConfirmDialog, Dialog, DialogClose, type ConfirmDialogProps, type DialogProps } from "./components/Dialog";
 export { EmptyState, type EmptyStateProps } from "./components/EmptyState";
 export { Field, Input, Label, Select, type FieldProps, type InputProps, type SelectProps } from "./components/Field";
 export { Icon, icons, type IconName, type IconProps } from "./components/Icon";
