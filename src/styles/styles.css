@@ -384,3 +384,26 @@
   @keyframes dialog-in { from { scale: 0.96; opacity: 0; } }
   @keyframes dialog-out { to { scale: 0.96; opacity: 0; } }
 }
+
+/* ── Table ── */
+/* El contenedor scrollea en horizontal: la tabla nunca estira la Card. */
+@layer components {
+  .table-wrap { max-width: 100%; overflow-x: auto; overscroll-behavior-x: contain; }
+  .table-wrap:focus-visible { outline: 2px solid var(--ring); outline-offset: 2px; }
+  .table { width: 100%; border-collapse: collapse; font-size: var(--text-sm); }
+  .table :is(th, td) { padding: 0.625rem 0.75rem; text-align: left; vertical-align: middle; border-bottom: 1px solid var(--border); }
+  .table th { padding-block: 0 0.5rem; font-family: var(--font-mono); font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.1em;
+    font-weight: 500; color: var(--muted-foreground); white-space: nowrap; border-color: var(--border-strong); }
+  .table tbody tr:last-child td { border-bottom: 0; }
+  .table tbody tr { transition: background-color var(--dur-1) var(--ease-out); }
+  .table tbody tr:hover { background: var(--muted); }
+  /* Fila destacada: fondo de marca suave y una barra a la izquierda */
+  .table tr.is-highlight { background: var(--primary-soft); }
+  .table tr.is-highlight:hover { background: color-mix(in oklab, var(--primary-soft) 82%, var(--primary)); }
+  .table tr.is-highlight > :first-child { box-shadow: inset 2px 0 0 var(--primary); }
+  .table .cell-num { text-align: right; font-family: var(--font-mono); font-variant-numeric: tabular-nums; letter-spacing: -0.01em; white-space: nowrap; }
+  .table .cell-actions { text-align: right; width: 1%; white-space: nowrap; }
+  .table td.cell-actions { padding-block: 0.25rem; }
+  .cell-actions-in { display: inline-flex; gap: 0.25rem; vertical-align: middle; }
+  .cell-sub { display: block; margin-top: 0.125rem; font-size: var(--text-xs); color: var(--muted-foreground); }
+}
