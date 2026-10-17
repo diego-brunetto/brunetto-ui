@@ -1,3 +1,4 @@
+import { PageHeaderSection } from "./sections/PageHeader";
 import { useEffect, useState, type ReactNode } from "react";
 import {
   Achievement,
@@ -110,6 +111,8 @@ export function App() {
       </header>
 
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 21rem), 1fr))", gap: "1rem", alignItems: "start" }}>
+        <PageHeaderSection />
+
         <Spec title="Botón" api="<Button variant size>">
           <div style={row}>
             <Button variant="primary">Guardar</Button>

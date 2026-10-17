@@ -8,6 +8,7 @@ export { ConfirmDialog, type ConfirmDialogProps } from "./components/Dialog";
 export { EmptyState, type EmptyStateProps } from "./components/EmptyState";
 export { Field, Input, Label, Select, type FieldProps, type InputProps, type SelectProps } from "./components/Field";
 export { Icon, icons, type IconName, type IconProps } from "./components/Icon";
+export { PageHeader, type PageHeaderProps } from "./components/PageHeader";
 export { Progress, StackBar, type ProgressProps, type StackBarPart, type StackBarProps } from "./components/Progress";
 export { SegmentedControl, type SegmentedControlProps, type SegmentedOption } from "./components/SegmentedControl";
 export { Sheet, SheetClose, type SheetProps } from "./components/Sheet";
