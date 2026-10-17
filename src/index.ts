@@ -22,3 +22,5 @@ export { cx } from "./lib/cx";
 export { formatARS, formatNumber, formatPercent, formatUSD } from "./lib/format";
 export { getMotion } from "./lib/motion";
 export { useCountUp } from "./lib/useCountUp";
+export { defaultRenderLink, type LinkRenderProps, type RenderLink } from "./lib/link";
+export type { BottomNavOverflow } from "./components/BottomNav";

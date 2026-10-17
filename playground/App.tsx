@@ -32,6 +32,7 @@ import {
   formatARS,
   toast,
 } from "../src";
+import { BottomNavOverflow } from "./sections/BottomNavOverflow";
 
 type Mode = "auto" | "light" | "dark";
 
@@ -236,6 +237,8 @@ export function App() {
             />
           </div>
         </Spec>
+
+        <BottomNavOverflow mode={mode} onModeChange={setMode} />
 
         <Card soft style={{ gridColumn: "1 / -1" }}>
           <CardHeader title="Disponible" aside={<Badge tone="warning">3 pendientes</Badge>} />

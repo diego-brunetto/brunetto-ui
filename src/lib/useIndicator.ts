@@ -2,7 +2,7 @@ import { useLayoutEffect, useRef, type RefObject } from "react";
 
 /**
  * Mueve el `<span class="ind">` de un grupo (segmentado, pestañas, navegación) debajo del hijo activo.
- * El hijo activo se reconoce por aria-pressed="true", aria-selected="true" o data-state="active".
+ * El hijo activo se reconoce por aria-pressed="true", aria-selected="true", aria-current="page" o data-state="active".
  */
 export function useIndicator<T extends HTMLElement>(deps: unknown[]): {
   groupRef: RefObject<T | null>;
@@ -19,7 +19,7 @@ export function useIndicator<T extends HTMLElement>(deps: unknown[]): {
 
     const place = (instant: boolean) => {
       const act = group.querySelector<HTMLElement>(
-        ':scope > [aria-pressed="true"], :scope > [aria-selected="true"], :scope > [data-state="active"]',
+        ':scope > [aria-pressed="true"], :scope > [aria-selected="true"], :scope > [aria-current="page"], :scope > [data-state="active"]',
       );
       if (!act) {
         ind.style.setProperty("--ind-w", "0px");
