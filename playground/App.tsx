@@ -1,4 +1,5 @@
 import { useEffect, useState, type ReactNode } from "react";
+import { AlertSection } from "./sections/Alert";
 import {
   Achievement,
   Badge,
@@ -226,6 +227,7 @@ export function App() {
 
         <DialogSection />
 
+        <AlertSection />
         <Spec title="Navegación inferior" api="<BottomNav>" wide>
           <div style={{ position: "relative", height: "6rem", border: "1px solid var(--border)", background: "var(--background)" }}>
             <BottomNav
