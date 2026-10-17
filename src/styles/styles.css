@@ -406,6 +406,8 @@
   .table td.cell-actions { padding-block: 0.25rem; }
   .cell-actions-in { display: inline-flex; gap: 0.25rem; vertical-align: middle; }
   .cell-sub { display: block; margin-top: 0.125rem; font-size: var(--text-xs); color: var(--muted-foreground); }
+}
+
 /* ── Dialog ── */
 /* Columna flex con alto máximo: título y acciones fijos, el cuerpo scrollea adentro.
    El cuerpo sale a los bordes con margen negativo para que el foco de los campos no se recorte. */
@@ -415,6 +417,8 @@
   .dialog-body { display: grid; gap: 1rem; flex: 1 1 auto; min-height: 0; overflow-y: auto; overscroll-behavior: contain;
     margin: -0.25rem -1.25rem; padding: 0.25rem 1.25rem; }
   .dialog > .actions { flex: none; }
+}
+
 /* ── Alert ── */
 @layer components {
   /* Aviso en página: fondo suave del tono, bisel como los rellenos. La acción baja sola si no entra. */
@@ -429,6 +433,8 @@
   .alert-success { --alert-bg: var(--success-soft); --alert-fg: var(--success-text); }
   .alert-warning { --alert-bg: var(--warning-soft); --alert-fg: var(--warning-text); }
   .alert-danger { --alert-bg: var(--danger-soft); --alert-fg: var(--danger-text); }
+}
+
 /* ── PageHeader ── */
 /* El texto pide 18rem antes de achicarse: si no entran las acciones al lado, bajan solas.
    Sin media query, así también funciona dentro de un panel angosto. */
@@ -438,6 +444,8 @@
   .page-title { font-size: calc(var(--text-3xl) * var(--display-scale)); }
   .page-desc { font-size: var(--text-sm); color: var(--muted-foreground); max-width: 60ch; }
   .page-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; }
+}
+
 /* ── SideNav ── */
 /* Navegación lateral de escritorio: sticky, alto completo. Marca, acción y pie quedan fijos; los grupos scrollean. */
 @layer components {
@@ -461,6 +469,8 @@
   .snav-label { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .snav-aside { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--subtle); }
   .snav-footer { display: grid; gap: 0.5rem; padding-top: 0.75rem; border-top: 1px solid var(--border); }
+}
+
 /* ── BottomNav overflow ── */
 @layer components {
   /* Respeta la barra de gestos del teléfono. */
