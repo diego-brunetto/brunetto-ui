@@ -384,3 +384,19 @@
   @keyframes dialog-in { from { scale: 0.96; opacity: 0; } }
   @keyframes dialog-out { to { scale: 0.96; opacity: 0; } }
 }
+
+/* ── Alert ── */
+@layer components {
+  /* Aviso en página: fondo suave del tono, bisel como los rellenos. La acción baja sola si no entra. */
+  .alert { --alert-bg: var(--info-soft); --alert-fg: var(--info-text); --c: var(--cut);
+    display: flex; flex-wrap: wrap; align-items: flex-start; gap: 0.5rem 0.625rem; padding: 0.75rem 0.875rem; min-width: 0;
+    border-radius: var(--radius-lg); background: var(--alert-bg); color: var(--alert-fg); font-size: var(--text-sm); line-height: 1.45;
+    clip-path: polygon(0 0, calc(100% - var(--c)) 0, 100% var(--c), 100% 100%, var(--c) 100%, 0 calc(100% - var(--c))); }
+  .alert > .ic { margin-top: 0.05rem; }
+  .alert-body { flex: 1 1 12rem; min-width: 0; display: grid; gap: 0.125rem; overflow-wrap: anywhere; }
+  .alert-title { font-weight: 600; }
+  .alert-action { margin-inline-start: auto; align-self: center; }
+  .alert-success { --alert-bg: var(--success-soft); --alert-fg: var(--success-text); }
+  .alert-warning { --alert-bg: var(--warning-soft); --alert-fg: var(--warning-text); }
+  .alert-danger { --alert-bg: var(--danger-soft); --alert-fg: var(--danger-text); }
+}

@@ -1,4 +1,5 @@
 export { Achievement, type AchievementProps } from "./components/Achievement";
+export { Alert, type AlertProps, type AlertTone } from "./components/Alert";
 export { Badge, type BadgeProps, type BadgeTone } from "./components/Badge";
 export { BottomNav, type BottomNavItem, type BottomNavProps } from "./components/BottomNav";
 export { Button, type ButtonProps, type ButtonSize, type ButtonVariant } from "./components/Button";
