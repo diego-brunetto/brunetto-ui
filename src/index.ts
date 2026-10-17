@@ -11,6 +11,7 @@ export { Icon, icons, type IconName, type IconProps } from "./components/Icon";
 export { Progress, StackBar, type ProgressProps, type StackBarPart, type StackBarProps } from "./components/Progress";
 export { SegmentedControl, type SegmentedControlProps, type SegmentedOption } from "./components/SegmentedControl";
 export { Sheet, SheetClose, type SheetProps } from "./components/Sheet";
+export { SideNav, type SideNavAction, type SideNavGroup, type SideNavItem, type SideNavProps } from "./components/SideNav";
 export { Skeleton, SkeletonRow, type SkeletonProps } from "./components/Skeleton";
 export { CountUp, Money, Sparkline, Stat, type CountUpProps, type MoneyProps, type SparklineProps, type StatProps } from "./components/Stat";
 export { Stepper, type StepperProps } from "./components/Stepper";
@@ -20,5 +21,6 @@ export { toast, Toaster } from "./components/Toast";
 
 export { cx } from "./lib/cx";
 export { formatARS, formatNumber, formatPercent, formatUSD } from "./lib/format";
+export { defaultRenderLink, type LinkRenderProps, type RenderLink } from "./lib/link";
 export { getMotion } from "./lib/motion";
 export { useCountUp } from "./lib/useCountUp";

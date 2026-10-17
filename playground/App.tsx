@@ -32,6 +32,7 @@ import {
   formatARS,
   toast,
 } from "../src";
+import { SideNavSection } from "./sections/SideNav";
 
 type Mode = "auto" | "light" | "dark";
 
@@ -236,6 +237,8 @@ export function App() {
             />
           </div>
         </Spec>
+
+        <SideNavSection />
 
         <Card soft style={{ gridColumn: "1 / -1" }}>
           <CardHeader title="Disponible" aside={<Badge tone="warning">3 pendientes</Badge>} />
