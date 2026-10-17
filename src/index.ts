@@ -15,6 +15,7 @@ export { Skeleton, SkeletonRow, type SkeletonProps } from "./components/Skeleton
 export { CountUp, Money, Sparkline, Stat, type CountUpProps, type MoneyProps, type SparklineProps, type StatProps } from "./components/Stat";
 export { Stepper, type StepperProps } from "./components/Stepper";
 export { Switch, SwitchRow, type SwitchProps, type SwitchRowProps } from "./components/Switch";
+export { Table, TableBody, TableCell, TableHead, TableHeaderCell, TableRow, type TableCellProps, type TableHeaderCellProps, type TableProps, type TableRowProps } from "./components/Table";
 export { Tabs, TabsContent, TabsList, TabsTrigger, type TabsListProps } from "./components/Tabs";
 export { toast, Toaster } from "./components/Toast";
 
