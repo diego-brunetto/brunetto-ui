@@ -429,4 +429,13 @@
   .alert-success { --alert-bg: var(--success-soft); --alert-fg: var(--success-text); }
   .alert-warning { --alert-bg: var(--warning-soft); --alert-fg: var(--warning-text); }
   .alert-danger { --alert-bg: var(--danger-soft); --alert-fg: var(--danger-text); }
+/* ── PageHeader ── */
+/* El texto pide 18rem antes de achicarse: si no entran las acciones al lado, bajan solas.
+   Sin media query, así también funciona dentro de un panel angosto. */
+@layer components {
+  .page-header { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 0.75rem 1rem; }
+  .page-header-text { display: grid; gap: 0.375rem; flex: 1 1 18rem; min-width: 0; }
+  .page-title { font-size: calc(var(--text-3xl) * var(--display-scale)); }
+  .page-desc { font-size: var(--text-sm); color: var(--muted-foreground); max-width: 60ch; }
+  .page-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; }
 }
