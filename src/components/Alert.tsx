@@ -5,7 +5,7 @@ import { Icon, type IconName } from "./Icon";
 export type AlertTone = "info" | "success" | "warning" | "danger";
 
 /** Mismo criterio que Field y Badge: "x" para error, "alert" para advertencia. */
-const defaultIcons: Record<AlertTone, IconName> = { info: "bell", success: "check", warning: "alert", danger: "x" };
+const defaultIcons: Record<AlertTone, IconName> = { info: "info", success: "check-circle", warning: "alert", danger: "alert" };
 
 export interface AlertProps extends Omit<HTMLAttributes<HTMLDivElement>, "title"> {
   tone?: AlertTone;

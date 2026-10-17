@@ -1,7 +1,7 @@
 export { Achievement, type AchievementProps } from "./components/Achievement";
 export { Alert, type AlertProps, type AlertTone } from "./components/Alert";
 export { Badge, type BadgeProps, type BadgeTone } from "./components/Badge";
-export { BottomNav, type BottomNavItem, type BottomNavProps } from "./components/BottomNav";
+export { BottomNav, type BottomNavItem, type BottomNavOverflow, type BottomNavProps } from "./components/BottomNav";
 export { Button, type ButtonProps, type ButtonSize, type ButtonVariant } from "./components/Button";
 export { Card, CardHeader, Divider, type CardHeaderProps, type CardProps } from "./components/Card";
 export { Checkbox, type CheckboxProps } from "./components/Checkbox";
@@ -27,5 +27,3 @@ export { formatARS, formatNumber, formatPercent, formatUSD } from "./lib/format"
 export { defaultRenderLink, type LinkRenderProps, type RenderLink } from "./lib/link";
 export { getMotion } from "./lib/motion";
 export { useCountUp } from "./lib/useCountUp";
-export { defaultRenderLink, type LinkRenderProps, type RenderLink } from "./lib/link";
-export type { BottomNavOverflow } from "./components/BottomNav";

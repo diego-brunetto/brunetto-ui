@@ -80,7 +80,7 @@ export function BottomNav<V extends string>({ items, value, onValueChange, fab, 
     const inside = overflow.items.some((it) => idOf(it) === value);
     buttons.push(
       <button key="__more" type="button" aria-haspopup="dialog" aria-expanded={open} data-state={inside ? "active" : undefined} onClick={() => setOpen(true)}>
-        <Icon name={overflow.icon ?? "list"} />
+        <Icon name={overflow.icon ?? "more"} />
         {overflow.label ?? "Más"}
       </button>,
     );

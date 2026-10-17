@@ -33,7 +33,7 @@ export function TableSection() {
                 <Money trend={m.monto < 0 ? "negative" : "positive"}>{m.monto < 0 ? `−${formatARS(-m.monto)}` : formatARS(m.monto)}</Money>
               </TableCell>
               <TableCell actions>
-                <Button variant="ghost" size="sm" iconOnly aria-label={`Duplicar ${m.concepto}`}><Icon name="copy" /></Button>
+                <Button variant="ghost" size="sm" iconOnly aria-label={`Editar ${m.concepto}`}><Icon name="edit" /></Button>
                 <Button variant="ghost" size="sm" iconOnly aria-label={`Borrar ${m.concepto}`}><Icon name="trash" /></Button>
               </TableCell>
             </TableRow>

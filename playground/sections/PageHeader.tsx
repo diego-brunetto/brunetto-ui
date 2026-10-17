@@ -35,11 +35,11 @@ export function PageHeaderSection() {
         actions={
           <>
             <Button variant="outline" size="sm" iconOnly aria-label="Mes anterior" disabled={month === 0} onClick={() => setMonth((m) => m - 1)}>
-              <Icon name="chevron" style={{ rotate: "90deg" }} />
+              <Icon name="chevron-left" />
             </Button>
             <span className="num" style={{ fontSize: "var(--text-sm)", minWidth: "6.5rem", textAlign: "center" }}>{months[month]} 2026</span>
             <Button variant="outline" size="sm" iconOnly aria-label="Mes siguiente" disabled={month === months.length - 1} onClick={() => setMonth((m) => m + 1)}>
-              <Icon name="chevron" style={{ rotate: "-90deg" }} />
+              <Icon name="chevron-right" />
             </Button>
           </>
         }
