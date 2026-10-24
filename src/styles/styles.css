@@ -397,6 +397,10 @@
   .table tbody tr:last-child td { border-bottom: 0; }
   .table tbody tr { transition: background-color var(--dur-1) var(--ease-out); }
   .table tbody tr:hover { background: var(--muted); }
+  .table tbody tr.is-empty:hover { background: none; }
+  .table td.cell-empty { padding-block: 1.5rem; }
+  /* Totales: separados del cuerpo con el borde fuerte */
+  .table tfoot td { border-top: 1px solid var(--border-strong); border-bottom: 0; font-weight: 600; }
   /* Fila destacada: fondo de marca suave y una barra a la izquierda */
   .table tr.is-highlight { background: var(--primary-soft); }
   .table tr.is-highlight:hover { background: color-mix(in oklab, var(--primary-soft) 82%, var(--primary)); }

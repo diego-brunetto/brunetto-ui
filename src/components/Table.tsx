@@ -24,6 +24,25 @@ export function TableBody(props: HTMLAttributes<HTMLTableSectionElement>) {
   return <tbody {...props} />;
 }
 
+/** Totales: van separados del cuerpo y en negrita. */
+export function TableFoot(props: HTMLAttributes<HTMLTableSectionElement>) {
+  return <tfoot {...props} />;
+}
+
+export interface TableEmptyProps extends TdHTMLAttributes<HTMLTableCellElement> {
+  /** Cantidad de columnas de la tabla, para que la celda ocupe todo el ancho. */
+  colSpan: number;
+}
+
+/** Fila única para un cuerpo vacío: deja la cabecera a la vista. Adentro va un EmptyState. */
+export function TableEmpty({ className, ...rest }: TableEmptyProps) {
+  return (
+    <tr className="is-empty">
+      <td className={cx("cell-empty", className)} {...rest} />
+    </tr>
+  );
+}
+
 export interface TableRowProps extends HTMLAttributes<HTMLTableRowElement> {
   /** Fila a destacar: por ejemplo, recién cargada desde el teléfono. */
   highlight?: boolean;
