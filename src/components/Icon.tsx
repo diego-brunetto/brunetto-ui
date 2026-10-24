@@ -32,6 +32,29 @@ export const icons = {
   mega: (<><path d="M3 11v2a1 1 0 0 0 1 1h3l5 4V6L7 10H4a1 1 0 0 0-1 1z" /><path d="M16 9a3 3 0 0 1 0 6" /></>),
   alert: (<><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z" /><path d="M12 9v4M12 17h.01" /></>),
   clock: (<><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></>),
+  // Acciones
+  edit: (<><path d="M4 20h4L19 9a2.83 2.83 0 0 0-4-4L4 16z" /><path d="m13.5 6.5 4 4" /></>),
+  archive: (<><rect x="2" y="3" width="20" height="5" rx="1" /><path d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8M10 12h4" /></>),
+  upload: (<><path d="M12 15V3" /><path d="m7 8 5-5 5 5" /><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /></>),
+  logout: (<><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" /><path d="m16 17 5-5-5-5" /><path d="M21 12H9" /></>),
+  settings: (<><path d="M18.5 10.1 20.9 10.5v3l-2.4.4-.6 1.4 1.4 1.9-2.1 2.1-1.9-1.4-1.4.6-.4 2.4h-3l-.4-2.4-1.4-.6-1.9 1.4-2.1-2.1 1.4-1.9-.6-1.4-2.4-.4v-3l2.4-.4.6-1.4-1.4-1.9 2.1-2.1 1.9 1.4 1.4-.6.4-2.4h3l.4 2.4 1.4.6 1.9-1.4 2.1 2.1-1.4 1.9z" /><circle cx="12" cy="12" r="3" /></>),
+  filter: <path d="M3 4h18l-7 8.5V19l-4 2v-8.5z" />,
+  more: (<><circle cx="5" cy="12" r="1" /><circle cx="12" cy="12" r="1" /><circle cx="19" cy="12" r="1" /></>),
+  "arrow-left": <path d="M19 12H5m7 7-7-7 7-7" />,
+  "arrow-right": <path d="M5 12h14m-7-7 7 7-7 7" />,
+  "chevron-left": <path d="m15 18-6-6 6-6" />,
+  "chevron-right": <path d="m9 18 6-6-6-6" />,
+  // Secciones
+  card: (<><rect x="2" y="5" width="20" height="14" rx="2" /><path d="M2 10h20M6 15h4" /></>),
+  piggy: (<><path d="M19 9.5C18 6.9 15.3 5 12 5 7.6 5 4 8 4 11.8c0 1.9.9 3.6 2.5 4.8V20h3v-2.5h4V20h3v-3.4c.9-.7 1.6-1.5 2-2.6H21V9.5z" /><path d="M10 8h3M4 11.5c-1.2 0-2-.8-2-2M16 11.5h.01" /></>),
+  receipt: (<><path d="M5 3h14v18l-3-2-2 2-2-2-2 2-2-2-3 2z" /><path d="M9 8h6M9 12h6M9 16h3" /></>),
+  bank: (<><path d="M3 9h18L12 3.5z" /><path d="M6 12v6M10 12v6M14 12v6M18 12v6M3 21h18" /></>),
+  heart: <path d="M12 20.5 4.2 12.7a4.6 4.6 0 0 1 6.5-6.5L12 7.5l1.3-1.3a4.6 4.6 0 0 1 6.5 6.5z" />,
+  pulse: <path d="M3 12h4l2.5-6 5 12 2.5-6h4" />,
+  tag: (<><path d="M3 3h8l10 10-8 8L3 11z" /><path d="M7.5 7.5h.01" /></>),
+  lock: (<><rect x="4" y="11" width="16" height="10" rx="2" /><path d="M8 11V7a4 4 0 0 1 8 0v4M12 15v2" /></>),
+  "check-circle": (<><circle cx="12" cy="12" r="9" /><path d="m8 12 3 3 5-6" /></>),
+  info: (<><circle cx="12" cy="12" r="9" /><path d="M12 11v5M12 8h.01" /></>),
 } as const;
 
 export type IconName = keyof typeof icons;

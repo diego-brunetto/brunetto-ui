@@ -1,4 +1,6 @@
+import { PageHeaderSection } from "./sections/PageHeader";
 import { useEffect, useState, type ReactNode } from "react";
+import { AlertSection } from "./sections/Alert";
 import {
   Achievement,
   Badge,
@@ -32,6 +34,11 @@ import {
   formatARS,
   toast,
 } from "../src";
+import { IconsSection } from "./sections/Icons";
+import { TableSection } from "./sections/Table";
+import { DialogSection } from "./sections/Dialog";
+import { SideNavSection } from "./sections/SideNav";
+import { BottomNavOverflow } from "./sections/BottomNavOverflow";
 
 type Mode = "auto" | "light" | "dark";
 
@@ -110,6 +117,8 @@ export function App() {
       </header>
 
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 21rem), 1fr))", gap: "1rem", alignItems: "start" }}>
+        <PageHeaderSection />
+
         <Spec title="Botón" api="<Button variant size>">
           <div style={row}>
             <Button variant="primary">Guardar</Button>
@@ -221,6 +230,9 @@ export function App() {
           </div>
         </Spec>
 
+        <DialogSection />
+
+        <AlertSection />
         <Spec title="Navegación inferior" api="<BottomNav>" wide>
           <div style={{ position: "relative", height: "6rem", border: "1px solid var(--border)", background: "var(--background)" }}>
             <BottomNav
@@ -236,6 +248,11 @@ export function App() {
             />
           </div>
         </Spec>
+
+        <IconsSection />
+        <TableSection />
+        <SideNavSection />
+        <BottomNavOverflow mode={mode} onModeChange={setMode} />
 
         <Card soft style={{ gridColumn: "1 / -1" }}>
           <CardHeader title="Disponible" aside={<Badge tone="warning">3 pendientes</Badge>} />
