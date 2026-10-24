@@ -208,6 +208,8 @@
   .input:hover { border-color: var(--border-strong); }
   .input:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px var(--ring); }
   .input.num { font-family: var(--font-mono); }
+  /* Safari en iOS hace zoom al enfocar un campo de menos de 16px y no vuelve solo */
+  @media (pointer: coarse) { .input { font-size: var(--text-base); } }
   .affix-wrap { position: relative; }
   .affix-wrap .affix { position: absolute; left: 0.75rem; top: 50%; translate: 0 -50%; color: var(--muted-foreground); font-size: var(--text-sm); pointer-events: none; }
   .affix-wrap .input { padding-left: 1.75rem; }
