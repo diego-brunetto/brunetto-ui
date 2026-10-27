@@ -39,7 +39,11 @@ import { TableSection } from "./sections/Table";
 import { DialogSection } from "./sections/Dialog";
 import { SideNavSection } from "./sections/SideNav";
 import { BottomNavOverflow } from "./sections/BottomNavOverflow";
+<<<<<<< HEAD
 import { StepperLarge } from "./sections/Stepper";
+=======
+import { ListSection } from "./sections/List";
+>>>>>>> 860b0ee (feat(list): add List, ListHeader and ListItem)
 
 type Mode = "auto" | "light" | "dark";
 
@@ -256,6 +260,7 @@ export function App() {
 
         <IconsSection />
         <TableSection />
+        <ListSection />
         <SideNavSection />
         <BottomNavOverflow mode={mode} onModeChange={setMode} />
 
