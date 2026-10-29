@@ -101,7 +101,7 @@ El kit vive en `@layer base` (tokens) y `@layer components`. Cualquier regla de 
 | `Sheet` | Hoja inferior con arrastre para cerrar (Radix Dialog). |
 | `ConfirmDialog` | Confirmación de algo que no se deshace. |
 | `Achievement` | Logro con chispas. Solo para hitos. |
-| `Icon` | Los 29 íconos del kit. |
+| `Icon` | Los íconos del kit (incluye cardio, superserie, grip y clipboard para Gym). |
 
 Utilidades: `formatARS`, `formatUSD`, `formatNumber`, `formatPercent`, `useCountUp`, `getMotion`, `cx`.
 
