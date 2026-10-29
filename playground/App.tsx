@@ -39,6 +39,7 @@ import { TableSection } from "./sections/Table";
 import { DialogSection } from "./sections/Dialog";
 import { SideNavSection } from "./sections/SideNav";
 import { BottomNavOverflow } from "./sections/BottomNavOverflow";
+import { StepperLarge } from "./sections/Stepper";
 
 type Mode = "auto" | "light" | "dark";
 
@@ -213,6 +214,10 @@ export function App() {
           <div style={{ minHeight: "3rem", display: "grid", placeItems: "center" }}>
             <Achievement trigger={kg > 80} color="var(--warning)">Nuevo récord: {kg.toLocaleString("es-AR")} kg</Achievement>
           </div>
+        </Spec>
+
+        <Spec title="Stepper grande" api='<Stepper size="lg" label quickSteps onClear>'>
+          <StepperLarge />
         </Spec>
 
         <Spec title="Vacío y carga" api="<EmptyState> <Skeleton>">
