@@ -17,4 +17,13 @@ describe("PageHeader", () => {
     expect(header).toHaveClass("page-header", "extra");
     expect(container.querySelector(".eyebrow, .page-desc, .page-actions")).toBeNull();
   });
+
+  it("sticky agrega la clase de barra fija y oculta la descripción", () => {
+    const { container } = render(
+      <PageHeader sticky title="Rutina" eyebrow="PPL" description="No se ve en la barra." actions={<button>Editar</button>} />,
+    );
+    expect(container.querySelector("header")).toHaveClass("page-header-sticky");
+    expect(screen.queryByText("No se ve en la barra.")).toBeNull();
+    expect(screen.getByText("PPL")).toBeInTheDocument();
+  });
 });

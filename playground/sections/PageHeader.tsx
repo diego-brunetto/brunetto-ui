@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type CSSProperties } from "react";
 import { Button, Card, Icon, PageHeader, SegmentedControl } from "../../src";
 
 const months = ["Agosto", "Septiembre", "Octubre"];
@@ -44,6 +44,23 @@ export function PageHeaderSection() {
           </>
         }
       />
+
+      <div style={{ "--page-pad": "1rem" } as CSSProperties}>
+        <p className="muted" style={{ fontSize: "var(--text-sm)", margin: "0 0 0.5rem" }}>Sticky (barra de Gym)</p>
+        <div style={{ height: "11rem", overflow: "auto", border: "1px solid var(--border)", borderRadius: "var(--radius)", background: "var(--background)" }}>
+          <PageHeader
+            sticky
+            title="Rutina"
+            eyebrow="Push / Pull / Legs"
+            actions={<Button variant="ghost" size="sm" iconOnly aria-label="Editar rutina"><Icon name="edit" /></Button>}
+          />
+          <div style={{ padding: "1rem", display: "grid", gap: "0.75rem" }}>
+            {["Día A · Pecho", "Día B · Espalda", "Día C · Piernas", "Día D · Hombros", "Día E · Brazos"].map((d) => (
+              <p key={d} style={{ margin: 0, padding: "0.75rem", background: "var(--surface)", border: "1px solid var(--border)" }}>{d}</p>
+            ))}
+          </div>
+        </div>
+      </div>
     </Card>
   );
 }
