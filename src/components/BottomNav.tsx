@@ -33,6 +33,12 @@ export interface BottomNavProps<V extends string> {
   overflow?: BottomNavOverflow<V>;
   /** Cómo dibujar los ítems con `href`. Por defecto, un `<a>`. */
   renderLink?: RenderLink;
+  /**
+   * `fixed` (default): al viewport, para apps reales (Gym, Finanzas). Reservá ~6,5rem + safe-area
+   * abajo en el `main` (`padding-bottom: calc(6.5rem + env(safe-area-inset-bottom))`).
+   * `absolute`: relativa al contenedor con `position: relative` (playground).
+   */
+  position?: "fixed" | "absolute";
   "aria-label"?: string;
   className?: string;
 }
@@ -40,10 +46,21 @@ export interface BottomNavProps<V extends string> {
 const idOf = <V extends string>(it: BottomNavItem<V>) => (it.value ?? it.href) as V;
 
 /**
- * Navegación inferior: de tres a cinco destinos. Se posiciona en absoluto al fondo de su contenedor,
- * que tiene que tener position: relative y dejar 6,5 rem libres abajo (más el safe-area del teléfono).
+ * Navegación inferior: de tres a cinco destinos.
+ * Por defecto va `fixed` al viewport (apps). En el playground usá `position="absolute"` dentro de un
+ * contenedor `relative` con altura.
  */
-export function BottomNav<V extends string>({ items, value, onValueChange, fab, overflow, renderLink, className, ...rest }: BottomNavProps<V>) {
+export function BottomNav<V extends string>({
+  items,
+  value,
+  onValueChange,
+  fab,
+  overflow,
+  renderLink,
+  position = "fixed",
+  className,
+  ...rest
+}: BottomNavProps<V>) {
   const [open, setOpen] = useState(false);
   const { groupRef, indRef } = useIndicator<HTMLElement>([value, items.length, !!overflow]);
   const link = renderLink ?? defaultRenderLink;
@@ -87,7 +104,11 @@ export function BottomNav<V extends string>({ items, value, onValueChange, fab, 
   }
 
   return (
-    <nav ref={groupRef} className={cx("bnav", overflow && "has-more", className)} aria-label={rest["aria-label"] ?? "Secciones"}>
+    <nav
+      ref={groupRef}
+      className={cx("bnav", position === "absolute" && "bnav-absolute", overflow && "has-more", className)}
+      aria-label={rest["aria-label"] ?? "Secciones"}
+    >
       <span ref={indRef} className="ind" aria-hidden="true" />
       {buttons}
       {overflow ? (
