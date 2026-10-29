@@ -84,7 +84,7 @@ El kit vive en `@layer base` (tokens) y `@layer components`. Cualquier regla de 
 
 | Componente | Para qué |
 | --- | --- |
-| `Button` | Acción. `variant`: primary, secondary, outline, ghost, danger. `size`, `iconOnly`, `block`, `loading`. |
+| `Button` | Acción. `variant`: primary, secondary, outline, ghost, danger. `size`, `iconOnly`, `block`, `loading`. Con `href` + `renderLink` navega como link (mismo contrato que SideNav). |
 | `Field`, `Input`, `Select`, `Textarea`, `Label` | Formulario con hint y error conectados por `aria-describedby`. `shakeKey` sacude al fallar. `Textarea` usa `.input` (16px en táctil). |
 | `Checkbox` | Casilla; `strikeWhenDone` para pendientes. |
 | `Switch`, `SwitchRow` | Ajustes que actúan al instante. |

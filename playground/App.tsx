@@ -123,7 +123,7 @@ export function App() {
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 21rem), 1fr))", gap: "1rem", alignItems: "start" }}>
         <PageHeaderSection />
 
-        <Spec title="Botón" api="<Button variant size>">
+        <Spec title="Botón" api="<Button href renderLink>">
           <div style={row}>
             <Button variant="primary">Guardar</Button>
             <Button>Secundario</Button>
@@ -135,6 +135,10 @@ export function App() {
             <Button variant="primary" size="sm" loading={loading} onClick={() => { setLoading(true); setTimeout(() => setLoading(false), 1400); }}>Con carga</Button>
             <Button variant="outline" size="sm" iconOnly aria-label="Agregar"><Icon name="plus" /></Button>
             <Button variant="primary" size="sm" disabled>Deshabilitado</Button>
+          </div>
+          <div style={row}>
+            <Button href="#hoy" variant="primary" size="sm">Volver a Hoy</Button>
+            <Button href="#progreso" variant="outline" size="sm">Ver progreso</Button>
           </div>
         </Spec>
 
