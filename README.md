@@ -93,6 +93,7 @@ El kit vive en `@layer base` (tokens) y `@layer components`. Cualquier regla de 
 | `Tabs`, `TabsList`, `TabsTrigger`, `TabsContent` | Pestañas (Radix: flechas, Inicio, Fin). |
 | `BottomNav` | Navegación inferior con FAB opcional. |
 | `Badge` | Estado, cantidad o variación. |
+| `Chip`, `ChipGroup` | Opciones rápidas tocables (`aria-pressed`), con scroll horizontal. |
 | `Card`, `CardHeader`, `Divider` | Superficies. `soft` para el bloque destacado. |
 | `Stat`, `CountUp`, `Money`, `Sparkline` | Datos, montos y tendencia. |
 | `Progress`, `StackBar` | Avance y partes de un total. |

@@ -40,6 +40,7 @@ import { TableSection } from "./sections/Table";
 import { DialogSection } from "./sections/Dialog";
 import { SideNavSection } from "./sections/SideNav";
 import { BottomNavOverflow } from "./sections/BottomNavOverflow";
+import { ChipSection } from "./sections/Chip";
 import { ListSection } from "./sections/List";
 import { StepperLarge } from "./sections/Stepper";
 
@@ -260,6 +261,7 @@ export function App() {
         </Spec>
 
         <IconsSection />
+        <ChipSection />
         <TableSection />
         <ListSection />
         <SideNavSection />
