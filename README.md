@@ -92,6 +92,7 @@ El kit vive en `@layer base` (tokens) y `@layer components`. Cualquier regla de 
 | `SegmentedControl` | Dos a cuatro opciones con indicador que se desliza. |
 | `Tabs`, `TabsList`, `TabsTrigger`, `TabsContent` | Pestañas (Radix: flechas, Inicio, Fin). |
 | `BottomNav` | Navegación inferior con FAB opcional. |
+| `PageHeader` | Encabezado de pantalla. `sticky` fija una barra compacta con blur y safe-area (Gym). |
 | `Badge` | Estado, cantidad o variación. |
 | `Chip`, `ChipGroup` | Opciones rápidas tocables (`aria-pressed`), con scroll horizontal. |
 | `Card`, `CardHeader`, `Divider` | Superficies. `soft` para el bloque destacado. |
