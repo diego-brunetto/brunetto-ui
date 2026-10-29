@@ -253,6 +253,7 @@ export function App() {
         <Spec title="Navegación inferior" api="<BottomNav>" wide>
           <div style={{ position: "relative", height: "6rem", border: "1px solid var(--border)", background: "var(--background)" }}>
             <BottomNav
+              position="absolute"
               value={nav}
               onValueChange={setNav}
               fab={{ label: "Cargar gasto", onClick: () => setSheet(true) }}

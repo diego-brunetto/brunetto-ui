@@ -22,6 +22,14 @@ describe("BottomNav", () => {
     expect(onChange).toHaveBeenCalledWith("movimientos");
   });
 
+  it("por defecto es fixed al viewport; absolute queda para el playground", () => {
+    const { rerender } = render(<BottomNav items={bar} value="resumen" aria-label="Nav" />);
+    expect(screen.getByRole("navigation", { name: "Nav" })).toHaveClass("bnav");
+    expect(screen.getByRole("navigation", { name: "Nav" })).not.toHaveClass("bnav-absolute");
+    rerender(<BottomNav position="absolute" items={bar} value="resumen" aria-label="Nav" />);
+    expect(screen.getByRole("navigation", { name: "Nav" })).toHaveClass("bnav-absolute");
+  });
+
   it("dibuja ítems con href como links, con renderLink propio", () => {
     const renderLink: RenderLink = ({ href, ...p }) => <a data-router="" href={`#${href}`} {...p} />;
     render(

@@ -91,7 +91,7 @@ El kit vive en `@layer base` (tokens) y `@layer components`. Cualquier regla de 
 | `Stepper` | Más y menos con paso fijo (2,5 kg, repeticiones). |
 | `SegmentedControl` | Dos a cuatro opciones con indicador que se desliza. |
 | `Tabs`, `TabsList`, `TabsTrigger`, `TabsContent` | Pestañas (Radix: flechas, Inicio, Fin). |
-| `BottomNav` | Navegación inferior con FAB opcional. |
+| `BottomNav` | Navegación inferior con FAB opcional. Por defecto `position="fixed"` al viewport (reservá `padding-bottom: calc(6.5rem + env(safe-area-inset-bottom))` en el `main`). En el playground usá `position="absolute"`. |
 | `PageHeader` | Encabezado de pantalla. `sticky` fija una barra compacta con blur y safe-area (Gym). |
 | `Badge` | Estado, cantidad o variación. |
 | `Chip`, `ChipGroup` | Opciones rápidas tocables (`aria-pressed`), con scroll horizontal. |

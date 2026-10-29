@@ -43,6 +43,7 @@ export function BottomNavOverflow({ mode, onModeChange }: { mode: Mode; onModeCh
           Sección actual: <strong style={{ color: "var(--foreground)" }}>{current?.label ?? "Resumen"}</strong>
         </p>
         <BottomNav
+          position="absolute"
           value={`#${path}`}
           items={items}
           fab={{ label: "Cargar", onClick: () => toast("Cargar gasto") }}
