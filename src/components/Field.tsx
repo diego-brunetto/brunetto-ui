@@ -9,6 +9,7 @@ import {
   type ReactElement,
   type ReactNode,
   type SelectHTMLAttributes,
+  type TextareaHTMLAttributes,
 } from "react";
 import { cx } from "../lib/cx";
 import { Icon } from "./Icon";
@@ -94,5 +95,25 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(function Select
       </select>
       <Icon name="chevron" />
     </div>
+  );
+});
+
+export interface TextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
+  /** Crece con el contenido hasta `maxRows` (si el navegador soporta `field-sizing`). */
+  autoSize?: boolean;
+}
+
+/** Texto de varias líneas. Usa la clase `.input` (16px en táctil, `min-width: 0`). */
+export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(function Textarea(
+  { autoSize, className, rows = 3, ...rest },
+  ref,
+) {
+  return (
+    <textarea
+      ref={ref}
+      rows={rows}
+      className={cx("input", "textarea", autoSize && "textarea-auto", className)}
+      {...rest}
+    />
   );
 });

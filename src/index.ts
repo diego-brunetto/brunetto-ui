@@ -7,7 +7,7 @@ export { Card, CardHeader, Divider, type CardHeaderProps, type CardProps } from 
 export { Checkbox, type CheckboxProps } from "./components/Checkbox";
 export { ConfirmDialog, Dialog, DialogClose, type ConfirmDialogProps, type DialogProps } from "./components/Dialog";
 export { EmptyState, type EmptyStateProps } from "./components/EmptyState";
-export { Field, Input, Label, Select, type FieldProps, type InputProps, type SelectProps } from "./components/Field";
+export { Field, Input, Label, Select, Textarea, type FieldProps, type InputProps, type SelectProps, type TextareaProps } from "./components/Field";
 export { Icon, icons, type IconName, type IconProps } from "./components/Icon";
 export { List, ListHeader, ListItem, type ListItemProps, type ListProps } from "./components/List";
 export { PageHeader, type PageHeaderProps } from "./components/PageHeader";

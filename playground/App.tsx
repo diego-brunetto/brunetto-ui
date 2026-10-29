@@ -15,6 +15,7 @@ import {
   Field,
   Icon,
   Input,
+  Textarea,
   Money,
   Progress,
   SegmentedControl,
@@ -136,7 +137,7 @@ export function App() {
           </div>
         </Spec>
 
-        <Spec title="Campo" api="<Field> <Input> <Select>">
+        <Spec title="Campo" api="<Field> <Input> <Select> <Textarea>">
           <Field label="Monto" hint="En pesos. Lo pasamos a dólares con el MEP del día.">
             <Input numeric prefix="$" placeholder="0,00" defaultValue="42.300" />
           </Field>
@@ -145,6 +146,9 @@ export function App() {
           </Field>
           <Field label="Categoría">
             <Select defaultValue="Comida"><option>Casa</option><option>Comida</option><option>Impuestos</option></Select>
+          </Field>
+          <Field label="Notas de la serie" hint="Cómo te sentiste, agarre, etc.">
+            <Textarea autoSize placeholder="Buenas reps, último al fallo." />
           </Field>
         </Spec>
 
