@@ -39,6 +39,7 @@ import { TableSection } from "./sections/Table";
 import { DialogSection } from "./sections/Dialog";
 import { SideNavSection } from "./sections/SideNav";
 import { BottomNavOverflow } from "./sections/BottomNavOverflow";
+import { ListSection } from "./sections/List";
 import { StepperLarge } from "./sections/Stepper";
 
 type Mode = "auto" | "light" | "dark";
@@ -256,6 +257,7 @@ export function App() {
 
         <IconsSection />
         <TableSection />
+        <ListSection />
         <SideNavSection />
         <BottomNavOverflow mode={mode} onModeChange={setMode} />
 
