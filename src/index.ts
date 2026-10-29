@@ -5,6 +5,7 @@ export { BottomNav, type BottomNavItem, type BottomNavOverflow, type BottomNavPr
 export { Button, type ButtonProps, type ButtonSize, type ButtonVariant } from "./components/Button";
 export { Card, CardHeader, Divider, type CardHeaderProps, type CardProps } from "./components/Card";
 export { Checkbox, type CheckboxProps } from "./components/Checkbox";
+export { Chip, ChipGroup, type ChipGroupProps, type ChipProps } from "./components/Chip";
 export { ConfirmDialog, Dialog, DialogClose, type ConfirmDialogProps, type DialogProps } from "./components/Dialog";
 export { EmptyState, type EmptyStateProps } from "./components/EmptyState";
 export { Field, Input, Label, Select, Textarea, type FieldProps, type InputProps, type SelectProps, type TextareaProps } from "./components/Field";
