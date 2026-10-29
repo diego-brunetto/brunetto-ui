@@ -107,6 +107,10 @@ El kit vive en `@layer base` (tokens) y `@layer components`. Cualquier regla de 
 
 Utilidades: `formatARS`, `formatUSD`, `formatNumber`, `formatPercent`, `useCountUp`, `getMotion`, `cx`.
 
+## Migración de Gym (para un agente en la app)
+
+La integración de pantallas **no se hace en este repo**. Guía para el agente que trabaje en `gym-workout-tracker`: [`docs/agents/gym-migration.md`](docs/agents/gym-migration.md) (tickets BRU-31…35).
+
 ## Desarrollo
 
 ```bash
