@@ -99,4 +99,37 @@ describe("ConfirmDialog", () => {
     await userEvent.click(screen.getByRole("button", { name: "Cancelar" }));
     expect(onOpenChange).toHaveBeenCalledWith(false);
   });
+
+  it("variant sheet confirma, cierra y Escape cancela", async () => {
+    const onConfirm = vi.fn();
+    function Harness() {
+      const [open, setOpen] = useState(true);
+      return (
+        <>
+          <span data-testid="state">{open ? "abierto" : "cerrado"}</span>
+          <ConfirmDialog
+            open={open}
+            onOpenChange={setOpen}
+            variant="sheet"
+            danger
+            title="¿Terminar la sesión?"
+            description="Se guarda lo cargado hasta ahora."
+            confirmLabel="Terminar sesión"
+            onConfirm={onConfirm}
+          />
+        </>
+      );
+    }
+    const { unmount } = render(<Harness />);
+    const sheet = screen.getByRole("alertdialog", { name: "¿Terminar la sesión?" });
+    expect(sheet).toHaveClass("sheet", "confirm-sheet");
+    await userEvent.click(screen.getByRole("button", { name: "Terminar sesión" }));
+    expect(onConfirm).toHaveBeenCalledOnce();
+    expect(screen.getByTestId("state")).toHaveTextContent("cerrado");
+    unmount();
+
+    render(<Harness />);
+    await userEvent.keyboard("{Escape}");
+    expect(screen.getByTestId("state")).toHaveTextContent("cerrado");
+  });
 });

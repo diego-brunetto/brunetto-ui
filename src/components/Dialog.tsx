@@ -2,6 +2,7 @@ import * as DialogPrimitive from "@radix-ui/react-dialog";
 import type { FormEvent, ReactNode } from "react";
 import { cx } from "../lib/cx";
 import { Button } from "./Button";
+import { Sheet, SheetClose } from "./Sheet";
 
 export interface DialogProps {
   open: boolean;
@@ -87,10 +88,15 @@ export interface ConfirmDialogProps {
   onConfirm: () => void;
   /** Usa el botón de peligro. */
   danger?: boolean;
+  /**
+   * `sheet`: hoja inferior con botones grandes apilados (confirmar arriba, cancelar abajo),
+   * al alcance del pulgar. Misma API que el diálogo centrado.
+   */
+  variant?: "dialog" | "sheet";
   className?: string;
 }
 
-/** Diálogo centrado para confirmar algo que no se deshace. */
+/** Confirmación de algo que no se deshace. Centrada o en hoja inferior (`variant="sheet"`). */
 export function ConfirmDialog({
   open,
   onOpenChange,
@@ -100,8 +106,42 @@ export function ConfirmDialog({
   cancelLabel = "Cancelar",
   onConfirm,
   danger,
+  variant = "dialog",
   className,
 }: ConfirmDialogProps) {
+  const confirm = () => {
+    onConfirm();
+    onOpenChange(false);
+  };
+
+  if (variant === "sheet") {
+    const srDescription = typeof description === "string" ? description : "Confirmación";
+    return (
+      <Sheet
+        open={open}
+        onOpenChange={onOpenChange}
+        role="alertdialog"
+        title={title}
+        description={srDescription}
+        className={cx("confirm-sheet", className)}
+      >
+        <p className="muted confirm-sheet-desc" aria-hidden="true">
+          {description}
+        </p>
+        <div className="confirm-sheet-actions">
+          <Button block size="lg" variant={danger ? "danger" : "primary"} onClick={confirm}>
+            {confirmLabel}
+          </Button>
+          <SheetClose asChild>
+            <Button block size="lg" variant="outline">
+              {cancelLabel}
+            </Button>
+          </SheetClose>
+        </div>
+      </Sheet>
+    );
+  }
+
   return (
     <Dialog
       open={open}
@@ -115,13 +155,7 @@ export function ConfirmDialog({
           <DialogClose asChild>
             <Button variant="outline">{cancelLabel}</Button>
           </DialogClose>
-          <Button
-            variant={danger ? "danger" : "primary"}
-            onClick={() => {
-              onConfirm();
-              onOpenChange(false);
-            }}
-          >
+          <Button variant={danger ? "danger" : "primary"} onClick={confirm}>
             {confirmLabel}
           </Button>
         </>

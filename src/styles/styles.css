@@ -394,6 +394,8 @@
   /* Capas: hoja inferior y diálogo */
   .scrim { position: fixed; inset: 0; background: var(--scrim); opacity: 0; pointer-events: none; z-index: 50; transition: opacity var(--dur-3) var(--ease-out); }
   .scrim.open { opacity: 1; pointer-events: auto; }
+  .confirm-sheet-desc { margin: 0; font-size: var(--text-sm); }
+  .confirm-sheet-actions { display: grid; gap: 0.75rem; }
   .sheet { position: fixed; left: 0; right: 0; bottom: 0; margin-inline: auto; width: min(30rem, 100%); z-index: 51; background: var(--surface);
     border-radius: var(--radius-xl) var(--radius-xl) 0 0; box-shadow: var(--shadow-lg); padding: 0.5rem 1.25rem calc(1.25rem + env(safe-area-inset-bottom, 0px));
     transform: translateY(105%); visibility: hidden; transition: transform var(--dur-3) var(--ease-in), visibility 0s linear var(--dur-3); }
