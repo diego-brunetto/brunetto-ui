@@ -81,6 +81,7 @@ export function App() {
   const [nav, setNav] = useState<"resumen" | "movimientos" | "cuentas" | "perfil">("resumen");
   const [sheet, setSheet] = useState(false);
   const [dialog, setDialog] = useState(false);
+  const [confirmSheet, setConfirmSheet] = useState(false);
   const [amount, setAmount] = useState("");
   const [amountError, setAmountError] = useState<string>();
   const [shake, setShake] = useState(0);
@@ -237,10 +238,11 @@ export function App() {
           <SkeletonRow />
         </Spec>
 
-        <Spec title="Capas" api="<Sheet> <ConfirmDialog> toast()">
+        <Spec title="Capas" api='<Sheet> <ConfirmDialog variant="sheet"> toast()'>
           <div style={row}>
             <Button variant="primary" onClick={() => setSheet(true)}>Abrir hoja</Button>
             <Button variant="outline" onClick={() => setDialog(true)}>Abrir diálogo</Button>
+            <Button variant="danger" onClick={() => setConfirmSheet(true)}>Confirmar en hoja</Button>
             <Button variant="ghost" onClick={() => toast("Cambios guardados")}>Mostrar aviso</Button>
           </div>
         </Spec>
@@ -299,6 +301,17 @@ export function App() {
         description="Se pierde el peso y las repeticiones que cargaste. No se puede deshacer."
         confirmLabel="Borrar serie"
         onConfirm={() => toast("Serie borrada", "trash")}
+      />
+
+      <ConfirmDialog
+        open={confirmSheet}
+        onOpenChange={setConfirmSheet}
+        variant="sheet"
+        danger
+        title="¿Terminar la sesión?"
+        description="Se guarda lo cargado hasta ahora. Podés retomarla desde Hoy."
+        confirmLabel="Terminar sesión"
+        onConfirm={() => toast("Sesión terminada")}
       />
       <Toaster />
     </div>

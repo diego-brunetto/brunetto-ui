@@ -11,6 +11,8 @@ export interface SheetProps {
   children: ReactNode;
   /** Si está, la hoja es un <form> y esto corre al enviar (ya con preventDefault). */
   onSubmit?: (e: FormEvent<HTMLFormElement>) => void;
+  /** "alertdialog" para confirmaciones que no se deshacen. */
+  role?: "dialog" | "alertdialog";
   className?: string;
 }
 
@@ -20,7 +22,7 @@ const CLOSE_DRAG_PX = 90;
  * Hoja inferior para cargar o editar algo en el celular. Sube con --ease-out, baja con --ease-in
  * y se cierra arrastrando la manija más de 90 px. Foco atrapado y Escape cierra (Radix).
  */
-export function Sheet({ open, onOpenChange, title, description, children, onSubmit, className }: SheetProps) {
+export function Sheet({ open, onOpenChange, title, description, children, onSubmit, role = "dialog", className }: SheetProps) {
   const ref = useRef<HTMLFormElement>(null);
   const drag = useRef<{ y0: number; dy: number; moved: boolean } | null>(null);
 
@@ -35,7 +37,7 @@ export function Sheet({ open, onOpenChange, title, description, children, onSubm
     <DialogPrimitive.Root open={open} onOpenChange={onOpenChange}>
       <DialogPrimitive.Portal>
         <DialogPrimitive.Overlay className="scrim open" />
-        <DialogPrimitive.Content asChild {...(description ? {} : { "aria-describedby": undefined })}>
+        <DialogPrimitive.Content asChild role={role} {...(description ? {} : { "aria-describedby": undefined })}>
           <form
             ref={ref}
             className={cx("sheet open", className)}

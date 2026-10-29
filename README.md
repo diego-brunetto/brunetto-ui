@@ -100,7 +100,7 @@ El kit vive en `@layer base` (tokens) y `@layer components`. Cualquier regla de 
 | `EmptyState`, `Skeleton`, `SkeletonRow` | Vacío y carga. |
 | `Toaster`, `toast()` | Avisos en pasado y con el dato. |
 | `Sheet` | Hoja inferior con arrastre para cerrar (Radix Dialog). |
-| `ConfirmDialog` | Confirmación de algo que no se deshace. |
+| `ConfirmDialog` | Confirmación de algo que no se deshace. `variant="sheet"`: hoja inferior con botones apilados. |
 | `Achievement` | Logro con chispas. Solo para hitos. |
 | `Icon` | Los íconos del kit (incluye cardio, superserie, grip y clipboard para Gym). |
 
